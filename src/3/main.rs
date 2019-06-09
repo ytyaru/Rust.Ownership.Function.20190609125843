@@ -9,6 +9,7 @@ fn main() {
     println!("{}, {}", s1, len); // &で参照したから戻り値にして所有権をムーブせずとも参照できる
 }
 fn calc_length(s: &String) -> usize {
+//    s.push_str(" world !!"); // error[E0596]: cannot borrow immutable borrowed content `*s` as mutable 借用は参照しかできない。変更不可。
     s.len()
 } // sは参照のため所有権がムーブされずスコープはmain関数のままなので本関数の末尾でメモリ解放されない
 
